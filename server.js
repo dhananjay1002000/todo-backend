@@ -7,11 +7,11 @@ const mongoose = require('mongoose');
 const bodyParser = require('body-parser')
 dotenv.config();
 const uri = process.env.URI;
-const url = process.env.URL;
+
 
 app.use(cors({
-    origin:url,
-    methods:'GET , POST , PUT , DELETE'
+    origin: '*', // Replace '*' with the specific origins you want to allow, e.g., 'http://example.com'
+    methods: 'GET, POST, PUT, DELETE'
 }));
 
 app.use(bodyParser.json()); 
