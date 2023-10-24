@@ -6,13 +6,19 @@ const cors = require('cors');
 const mongoose = require('mongoose');
 const bodyParser = require('body-parser')
 dotenv.config();
+const uri = process.env.URI;
+const url = process.env.URL;
 
-app.use(cors());
+app.use(cors({
+    origin:url,
+    methods:'GET , POST , PUT , DELETE'
+}));
+
 app.use(bodyParser.json()); 
 app.use(bodyParser.urlencoded({ extended: true }));
-const url = process.env.URI;
 
-mongoose.connect(url , { useNewUrlParser: true, useUnifiedTopology: true });
+
+mongoose.connect(uri , { useNewUrlParser: true, useUnifiedTopology: true });
 
 const todosSchema = mongoose.Schema({
     todo: String
