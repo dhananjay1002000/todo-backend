@@ -9,10 +9,7 @@ dotenv.config();
 const uri = process.env.URI;
 
 
-app.use(cors({
-    origin: '*', // Replace '*' with the specific origins you want to allow, e.g., 'http://example.com'
-    methods: 'GET, POST, PUT, DELETE'
-}));
+app.use(cors());
 
 app.use(bodyParser.json()); 
 app.use(bodyParser.urlencoded({ extended: true }));
