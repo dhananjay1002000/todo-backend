@@ -14,7 +14,7 @@ const flash = require('connect-flash');
 dotenv.config();
 const uri = process.env.URI;
 const session_uri = process.env.SESSION_URI
-const url = process.env.URL;
+
 
 // mongo_db connection 
 mongoose.connect(uri, { useNewUrlParser: true, useUnifiedTopology: true });
