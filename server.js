@@ -13,6 +13,7 @@ const bodyParser = require('body-parser');
 const flash = require('connect-flash');
 dotenv.config();
 const uri = process.env.URI;
+const url = process.env.URL;
 const session_uri = process.env.SESSION_URI
 
 
@@ -31,7 +32,11 @@ todosSchema.plugin(passportLocalMongoose);
 const Todo = mongoose.model('Todo', todosSchema);
 
 // Middleware setup
-app.use(cors());
+app.use(cors({
+    origin: url,
+    methods: 'GET, POST, PUT, DELETE',
+    credentials: true
+}));
 
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
