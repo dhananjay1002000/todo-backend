@@ -31,11 +31,7 @@ todosSchema.plugin(passportLocalMongoose);
 const Todo = mongoose.model('Todo', todosSchema);
 
 // Middleware setup
-app.use(cors({
-    origin: url,
-    methods: 'GET, POST, PUT, DELETE',
-    credentials: true
-}));
+app.use(cors());
 
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
