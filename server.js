@@ -18,11 +18,6 @@ const url = process.env.URL;
 
 // mongo_db connection 
 mongoose.connect(uri, { useNewUrlParser: true, useUnifiedTopology: true });
-//mongo session connection
-// const store = new MongoStore({
-//     url: process.env.SESSION_URI, // Replace with your MongoDB connection URL
-//     collection: 'sessions', // Replace with the desired collection name
-// });
 
 // db_Schema
 const todosSchema = new mongoose.Schema({
